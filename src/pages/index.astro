@@ -1,0 +1,231 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Home - Step Forward Insights";
+const pageDescription = "Elevate your understanding of footwear with expert insights, trends, and stylish recommendations. Explore a world of depth and elegance in every step.";
+
+const features = [
+  {
+    title: "Curated Expertise",
+    description: "Articles written by industry veterans, blending history, design, and modern relevance.",
+    icon: "fa-graduation-cap"
+  },
+  {
+    title: "Timeless Style",
+    description: "Minimalist guides to elevate your wardrobe with sophistication.",
+    icon: "fa-tshirt"
+  },
+  {
+    title: "Innovative Perspectives",
+    description: "Insights on sustainable materials, emerging technologies, and global influences.",
+    icon: "fa-lightbulb"
+  }
+];
+
+const collections = [
+  {
+    title: "Classic Sneakers",
+    description: "The enduring appeal of timeless athletic wear",
+    accent: "bg-amber-500"
+  },
+  {
+    title: "Luxury Heels",
+    description: "Craftsmanship that defines elegance and grace",
+    accent: "bg-rose-500"
+  },
+  {
+    title: "Eco-Friendly Options",
+    description: "Sustainable choices for conscious consumers",
+    accent: "bg-emerald-500"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 z-0"></div>
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIgZmlsbD0iIzM0MzQzNCIgZmlsbC1vcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')] opacity-20"></div>
+    
+    <div class="relative z-10 container mx-auto px-4 text-center py-20">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+          Step Forward Insights
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-200 font-light mb-10 max-w-2xl mx-auto tracking-wide">
+          Elevating Footwear Knowledge with Depth and Style
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+            Explore Collections
+          </button>
+          <button class="px-8 py-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-900 font-medium rounded-full transition-all duration-300">
+            Read Our Stories
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="w-8 h-12 rounded-full border-2 border-white flex justify-center">
+        <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-20 bg-gradient-to-b from-slate-50 to-slate-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-800 mb-8">
+          Welcome to Our World of Footwear Excellence
+        </h2>
+        <div class="prose prose-lg max-w-none text-slate-600 leading-relaxed">
+          <p class="mb-6">
+            In a world of fleeting trends, we delve deeper—uncovering the stories, craftsmanship, and innovations that define exceptional shoes.
+          </p>
+          <p class="mb-8">
+            Whether you're a collector, enthusiast, or everyday walker, our mission is to help you step into a richer understanding of footwear.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-800 mb-4">
+          Why Choose Us?
+        </h2>
+        <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {features.map((feature, index) => (
+          <div key={index} class="group p-8 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-200 transition-all duration-300 hover:shadow-lg">
+            <div class="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mb-6 group-hover:bg-amber-200 transition-colors duration-300">
+              <i class={`fas ${feature.icon} text-amber-700 text-2xl`}></i>
+            </div>
+            <h3 class="text-2xl font-serif font-semibold text-slate-800 mb-4">{feature.title}</h3>
+            <p class="text-slate-600 leading-relaxed">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Collections Section -->
+  <section class="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">
+          Discover Our Collections
+        </h2>
+        <p class="max-w-2xl mx-auto text-slate-300">
+          Explore thoughtfully curated categories that celebrate the artistry and innovation in footwear
+        </p>
+        <div class="w-24 h-1 bg-amber-500 mx-auto mt-6"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {collections.map((collection, index) => (
+          <div key={index} class="overflow-hidden rounded-2xl group relative">
+            <div class={`${collection.accent} h-64 flex items-center justify-center`}>
+              <div class="bg-white bg-opacity-20 backdrop-blur-sm w-full h-full flex items-center justify-center">
+                <h3 class="text-3xl font-serif font-bold text-white text-center px-6">{collection.title}</h3>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <p class="text-slate-100 mb-4">{collection.description}</p>
+              <button class="text-amber-300 font-medium flex items-center group-hover:text-white transition-colors">
+                Explore Collection
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-800 mb-6">
+          Ready to Elevate Your Footwear Knowledge?
+        </h2>
+        <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+          Join our community of footwear enthusiasts and discover new perspectives every week
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+            Subscribe to Newsletter
+          </button>
+          <button class="px-8 py-3 bg-transparent border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-medium rounded-full transition-all duration-300">
+            Browse Articles
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .transition-all {
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .transform {
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  
+  .hover\:transform:hover {
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+  }
+  
+  .hover\:-translate-y-1:hover {
+    --tw-translate-y: -0.25rem;
+  }
+  
+  .bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-to-b {
+    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+</style>
